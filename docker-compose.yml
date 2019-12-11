@@ -3,7 +3,7 @@ services:
   nest:
     container_name: nest_service
     restart: always
-    build: ./nest-app
+    build: ./nestapp
     ports:
       - "3000:3000"
     command: npm start

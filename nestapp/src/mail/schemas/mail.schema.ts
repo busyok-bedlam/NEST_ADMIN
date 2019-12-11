@@ -10,7 +10,7 @@ const UserSchema = new mongoose.Schema({
 		required: true
 	}
 })
-const messageSchema = new mongoose.Schema({
+export const MessageSchema = new mongoose.Schema({
 	theme: {
 		type: String,
 		required: true,
@@ -21,7 +21,5 @@ const messageSchema = new mongoose.Schema({
 	},
 	sender: UserSchema,
 	receivers: [UserSchema]
+})
 
-)
-
-export mongoose.model('Message', messageSchema);

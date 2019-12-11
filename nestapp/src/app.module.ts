@@ -2,12 +2,11 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
-import { UsersModule } from './users/users.module';
 import { MailModule } from './mail/mail.module';
-import { MqttModule } from './mqtt/mqtt.module';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [AuthModule, UsersModule, MailModule, MqttModule],
+	imports: [AuthModule, MailModule, MongooseModule.forRoot('mongodb+srv://bulat:(_omar4hayam_)@cluster0-kglzf.mongodb.net/nest-admin?retryWrites=true&w=majority')],
   controllers: [AppController],
   providers: [AppService],
 })
